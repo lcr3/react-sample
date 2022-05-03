@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import { Top } from "./component/top";
+import Top from "./component/top";
 import "./App.css";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <Top id={2} text="test"></Top>
+          <Top id={2} name="test"></Top>
         </p>
 
         <a

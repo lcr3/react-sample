@@ -2,9 +2,16 @@ import React from "react";
 
 type Props = {
   id: number;
-  text: string;
-};
+  name: string;
+}
 
-export const Top = (props: Props) => {
-  return <div>{props.text}</div>;
-};
+class Top extends React.Component<Props> {
+  render() {
+    return (
+      <div>
+        {this.props.name}さん。こんにちは。
+      </div>
+    )
+  }
+}
+export default Top
