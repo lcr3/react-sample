@@ -1,40 +1,55 @@
-import React from "react";
-import logo from "./logo.svg";
-import Top from "./component/top";
+import React, { Component } from "react";
+
 import TodoInput from "./component/Todoinput";
 import TodoList from "./component/ToDoList";
 import "./App.css";
 
-function App() {
-  const tasks = [
-    { title: 'todo1', id: 0 },
-    { title: 'todo2', id: 1 }
-  ]
-  return (
-    <div>
-      <h1>Todo App</h1>
-      <TodoInput />
-      <TodoList todos={tasks}></TodoList>
-    </div>
-  )
-  
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+type TodoState = {
+  todos: {
+    title: string;
+    id: number;
+  }[];
+  uniqueId: number;
+};
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Top id={2} name="test"></Top>
-      </header>
-    </div>
-  );
+class App extends React.Component<{}, TodoState> {
+  constructor(state: any) {
+    super(state);
+    this.state = {
+      todos: [
+        {
+          title: "デフォルトTODO",
+          id: 0,
+        },
+      ],
+      uniqueId: 1,
+    };
+    this.addTodo = this.addTodo.bind(this);
+  }
+
+  addTodo(title: string) {
+    const { todos, uniqueId }: TodoState = this.state;
+
+    todos.push({
+      title,
+      id: uniqueId,
+    });
+
+    this.setState({
+      todos: todos,
+      uniqueId: uniqueId + 1,
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>TODO App</h1>
+        <TodoInput addTodo={this.addTodo} />
+        <TodoList todos={this.state.todos} />
+      </div>
+    );
+  }
 }
 
 export default App;
