@@ -5,7 +5,11 @@ type Props = {
 };
 
 const TodoItem: React.FC<Props> = (props) => {
-  return <li>{props.title}</li>;
+  return (
+    <>
+      <li>{props.title}</li>;
+    </>
+  );
 };
 
 export default TodoItem;
