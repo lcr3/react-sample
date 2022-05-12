@@ -8,18 +8,14 @@ type Props = {
   }[];
 };
 
-class TodoList extends React.Component<Props, {}> {
-  render() {
-    {
-      return (
-        <div>
-          {this.props.todos.map(({ title, id }) => (
-            <TodoItem title={title} key={id} />
-          ))}
-        </div>
-      );
-    }
-  }
-}
+const TodoList: React.FC<Props> = (props) => {
+  return (
+    <div>
+      {props.todos.map(({ title, id }) => (
+        <TodoItem title={title} key={id} />
+      ))}
+    </div>
+  );
+};
 
 export default TodoList;

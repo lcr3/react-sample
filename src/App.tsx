@@ -12,44 +12,50 @@ type TodoState = {
   uniqueId: number;
 };
 
-class App extends React.Component<{}, TodoState> {
-  constructor(state: any) {
-    super(state);
-    this.state = {
-      todos: [
-        {
-          title: "デフォルトTODO",
-          id: 0,
-        },
-      ],
-      uniqueId: 1,
-    };
-    this.addTodo = this.addTodo.bind(this);
-  }
+function App() {
+  // const [todos: {
+  //   todos: [
+  //     {
+  //       title: "デフォルトTODO",
+  //       id: 0,
+  //     },
+  //   ],
+  //   uniqueId: 1,
+  // }]
+  // this.state = {
+  //   todos: [
+  //     {
+  //       title: "デフォルトTODO",
+  //       id: 0,
+  //     },
+  //   ],
+  //   uniqueId: 1,
+  // };
+  // this.addTodo = this.addTodo.bind(this);
 
-  addTodo(title: string) {
-    const { todos, uniqueId }: TodoState = this.state;
 
-    todos.push({
-      title,
-      id: uniqueId,
-    });
+  // addTodo(title: string) {
+  //   const { todos, uniqueId }: TodoState = this.state;
 
-    this.setState({
-      todos: todos,
-      uniqueId: uniqueId + 1,
-    });
-  }
+  //   todos.push({
+  //     title,
+  //     id: uniqueId,
+  //   });
 
-  render() {
+  //   this.setState({
+  //     todos: todos,
+  //     uniqueId: uniqueId + 1,
+  //   });
+  // }
+
     return (
       <div className="App">
         <h1>TODO App</h1>
-        <TodoInput addTodo={this.addTodo} />
-        <TodoList todos={this.state.todos} />
+        <TodoInput />
+        {/* <TodoList todos={this.state.todos} /> */}
       </div>
     );
-  }
+  
 }
 
 export default App;

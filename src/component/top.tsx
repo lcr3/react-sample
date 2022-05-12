@@ -3,15 +3,9 @@ import React from "react";
 type Props = {
   id: number;
   name: string;
-}
+};
 
-class Top extends React.Component<Props> {
-  render() {
-    return (
-      <div>
-        {this.props.name}さん。こんにちは。
-      </div>
-    )
-  }
-}
-export default Top
+const Top: React.FC<Props> = (props) => {
+  return <div>{props.name}さん。こんにちは。</div>;
+};
+export default Top;

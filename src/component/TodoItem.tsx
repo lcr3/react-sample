@@ -4,10 +4,8 @@ type Props = {
   title: string;
 };
 
-class TodoItem extends React.Component<Props, {}> {
-  render() {
-    return <li>{this.props.title}</li>;
-  }
-}
+const TodoItem: React.FC<Props> = (props) => {
+  return <li>{props.title}</li>;
+};
 
 export default TodoItem;
