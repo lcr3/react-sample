@@ -18,7 +18,7 @@ const App: React.FC = () => {
   }
   const [todoState, setTodoState] = useState<TodoState>(defaultTodos)
 
-  function addTodo(title: string) {
+  const addTodo = (title: string) => {
     const { todos, uniqueId }: TodoState = todoState
 
     todos.push({ title, id: uniqueId })
@@ -26,11 +26,16 @@ const App: React.FC = () => {
     setTodoState({ todos: todos, uniqueId: uniqueId + 1 })
   }
 
+  const resetTodo = () => {
+    setTodoState({ todos: [], uniqueId: 1 })
+  }
+
   return (
     <div className="App">
       <h1>TODO App</h1>
+      <button onClick={resetTodo}>リセット</button>
       <TodoInput onClick={addTodo} />
-      {/* <TodoList todos={this.state.todos} /> */}
+      <TodoList todos={todoState.todos} />
     </div>
   )
 }

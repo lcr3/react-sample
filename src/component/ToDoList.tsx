@@ -1,12 +1,12 @@
-import React from "react";
-import TodoItem from "./TodoItem";
+import React from 'react'
+import TodoItem from './TodoItem'
 
 type Props = {
   todos: {
-    title: string;
-    id: number;
-  }[];
-};
+    title: string
+    id: number
+  }[]
+}
 
 const TodoList: React.FC<Props> = (props) => {
   return (
@@ -15,7 +15,7 @@ const TodoList: React.FC<Props> = (props) => {
         <TodoItem title={title} key={id} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default TodoList;
+export default TodoList

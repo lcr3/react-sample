@@ -8,7 +8,6 @@ const TodoInput: React.FC<Props> = (props) => {
   const [inputState, setInputState] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('changed')
     setInputState(e.target.value)
     console.log(inputState)
   }
