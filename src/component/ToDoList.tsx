@@ -9,7 +9,6 @@ const TodoList: React.FC<Props> = (props) => {
   return (
     <div>
       {props.todos.map(({ title, id }) => {
-        console.log("aaaaaa")
         return(
           <TodoItem title={title} key={`todo_item_${id}`} />
         )
