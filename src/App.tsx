@@ -8,14 +8,7 @@ import { useTodo } from '@/hooks/useTodo'
 const App: React.FC = () => {
   const { todoState: state, addTodo: add, resetTodo: reset } = useTodo()
 
-  return (
-    <div className="App">
-      <h1>TODO App</h1>
-      <button onClick={reset}>リセット</button>
-      <TodoInput onClick={add} />
-      <TodoList todos={state.todos} />
-    </div>
-  )
+  return <Top />
 }
 
 export default App

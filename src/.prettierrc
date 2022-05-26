@@ -1,6 +1,9 @@
 {
+  "printWidth": 80, // 折り返す行の長さ
   "tabWidth": 2,
   "useTabs": false,
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true, // シングルクォートに置き換え
+  "jsxSingleQuote": true, // シングルクォートに置き換え(JSX)
+  "singleAttributePerLine": true // JSXの属性ごとに改行する
 }
