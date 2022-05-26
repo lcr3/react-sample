@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import TodoInput from './component/Todoinput'
-import TodoList from './component/ToDoList'
+import TodoInput from '@/component/Todoinput'
+import TodoList from '@/component/ToDoList'
 import './App.css'
-import { useTodo } from "./hooks/useTodo"
+import { useTodo } from '@/hooks/useTodo'
 
 const App: React.FC = () => {
   const { todoState: state, addTodo: add, resetTodo: reset } = useTodo()
