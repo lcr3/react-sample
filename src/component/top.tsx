@@ -11,7 +11,7 @@ return (
     <>
       <Container>
         <h1>Todoリスト</h1>
-        <Grid xs={12}>
+        <Grid>
           <Stack spacing={3}>
             <TodoInput onClick={add} />
             <TodoList todos={state.todos} />

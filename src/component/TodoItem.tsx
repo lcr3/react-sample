@@ -7,7 +7,7 @@ type Props = {
 const TodoItem: React.FC<Props> = (props) => {
   return (
     <>
-      <li>{props.title}</li>;
+      {props.title}
     </>
   );
 };
