@@ -5,7 +5,11 @@ import TodoInput from '@/component/Todoinput'
 import { useTodo } from '@/hooks/useTodo'
 
 const Top: React.FC = () => {
-  const { todoState: state, addTodo: add, resetTodo: reset } = useTodo()
+  const { todoState: state, addTodo: add, resetTodo: reset, deleteTodo: deleteTodo } = useTodo()
+
+  const handleDeleteOnClick = (index: number) => {
+    deleteTodo(index)
+  }
 
 return (
     <>
@@ -14,7 +18,7 @@ return (
         <Grid>
           <Stack spacing={3}>
             <TodoInput onClick={add} />
-            <TodoList todos={state.todos} />
+            <TodoList todos={state.todos} onClick={handleDeleteOnClick}/>
           </Stack>
         </Grid>
       </Container>
