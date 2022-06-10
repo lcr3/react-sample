@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Button, TextField } from '@mui/material'
+import { Box, Button, Grid, TextField } from '@mui/material'
 
 type Props = {
   onClick: (title: string) => void
@@ -15,8 +15,24 @@ const TodoInput: React.FC<Props> = (props) => {
 
   return (
     <>
-      <TextField inputRef={inputRef} placeholder="新規ToDoを入力してください" />
-      <Button onClick={handleClick}>登録</Button>
+      <Grid container spacing={4}>
+        <Grid item xs={9}>
+          <TextField
+            inputRef={inputRef}
+            placeholder="新規ToDoを入力してください"
+            sx={{ width: '100%' }}
+          />
+        </Grid>
+        <Grid item xs={3}>
+          <Button
+            onClick={handleClick}
+            sx={{ height: '100%' }}
+            variant="outlined"
+          >
+            登録
+          </Button>
+        </Grid>
+      </Grid>
     </>
   )
 }
